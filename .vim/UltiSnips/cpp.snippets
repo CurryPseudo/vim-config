@@ -1,0 +1,75 @@
+snippet func
+${1:void} ${2:function}($3) {
+	${4://Todo}
+}
+endsnippet 
+snippet hdef "a hpp file auto define" b
+#ifndef ${1: `!p 
+s = path
+import re
+s = re.sub(r"\..*", "", s)
+s = s.upper()
+s = s.replace('/', '_')
+s = s.replace('-', '_')
+s += "_H"
+snip.rv = s
+`}
+#define $1
+$2
+#endif
+endsnippet
+
+snippet for "for" b
+for(int ${1:i} = 0; $1 < ${2:n}; $1++) {
+	${3://todo}
+}
+endsnippet
+snippet for_iter "for_iter" b
+for(auto ${1:i} = ${2:xs}.begin(); $1 != $2.end(); $1++) {
+	${3://todo}
+}
+endsnippet
+snippet test_solution "Test leetcode solution" b
+#include "../include/test-frame.hpp"
+struct ${4:`!p
+head = t[1][0]
+head = head.upper()
+snip.rv = "{0}{1}Util".format(head, t[1][1:])
+`} : SolutionTestUtil<${2:void*}, ${3:void*}> {
+    void TestCallBack() const override {
+		${5://Test(....)}
+    }
+    $2 TestFunc(`!p
+types = t[3].split(', ')
+args = []
+i = 0
+for type in types:
+	args.append("{0} i{1}".format(type, i));
+	i += 1
+snip.rv = ', '.join(args)
+`) const override {
+        return Solution().${1:func}(`!p
+args = []
+for i in range(0, len(t[3].split(', '))):
+	args.append("i{0}".format(i))
+snip.rv = ', '.join(args)
+`);
+    }
+};
+template<>
+struct SolutionMap<Solution> {
+    typedef $4 util_type;
+};
+endsnippet
+
+snippet class "Class" b
+class ${1:ClassName} {
+	$1() {
+		${2://Todo}
+	}
+	~$1() {
+		${3://Todo}
+	}
+}
+
+endsnippet
