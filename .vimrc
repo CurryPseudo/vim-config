@@ -60,6 +60,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'crusoexia/vim-monokai'
 Plugin 'https://github.com/ervandew/screen'
+Plugin 'https://github.com/yegappan/greplace'
 
 ""Plugin 'embear/vim-localvimrc'
 ""Plugin 'w0rp/ale'
@@ -76,8 +77,8 @@ set wildmenu
 set laststatus=2
 set ruler
 set number
-""set cursorline
-set cursorcolumn
+set cursorline
+""set cursorcolumn
 set encoding=utf-8
 
 "Settings for powerline
