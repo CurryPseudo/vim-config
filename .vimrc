@@ -61,6 +61,7 @@ Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'crusoexia/vim-monokai'
 Plugin 'https://github.com/ervandew/screen'
 Plugin 'https://github.com/yegappan/greplace'
+Plugin 'https://github.com/CurryPseudo/vim-snippet'
 
 ""Plugin 'embear/vim-localvimrc'
 ""Plugin 'w0rp/ale'
@@ -162,7 +163,7 @@ map <Leader>rs :source my.vim<cr>
 let g:UltiSnipsExpandTrigger = '<leader><tab>'
 let g:UltiSnipsJumpForwardTrigger = '<leader><tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<leader><s-tab>'
-let g:UltiSnipsSnippetDirectories=["~/.vim/UltiSnips", "UltiSnips"]
+let g:UltiSnipsSnippetDirectories=["~/.vim/bundle/vim-snippet", "bundle/vim-snippet"]
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ( ()<left>
